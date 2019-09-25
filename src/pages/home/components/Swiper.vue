@@ -1,15 +1,9 @@
 <template>
-    <div class="wrapper">
+    <div class="wrapper" id="home-swiper">
         <swiper :options="swiperOption">
-            <!-- slides -->
-            <swiper-slide>
-                <img class="swiper-img" src="@/assets/imgs/swiper-1.jpg">
-            </swiper-slide>
-            <swiper-slide>
-                <img class="swiper-img" src="@/assets/imgs/swiper-2.jpg">
-            </swiper-slide>
-            <swiper-slide>
-                <img class="swiper-img" src="@/assets/imgs/swiper-3.jpg">
+            <swiper-slide v-for="item of imgSrc" :key="item.id">
+                <img class="swiper-img" :src="item.url">
+                <!-- 123 -->
             </swiper-slide>
             <!-- Optional controls -->
             <div class="swiper-pagination"  slot="pagination"></div>
@@ -29,27 +23,34 @@ export default {
                 }
             },
             imgSrc: [
-                ""
+                {
+                    id: "0001",
+                    url: "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20199/4e3f5a83099e6571ce4cad8609236121.jpg_750x200_48199ef2.jpg"
+                },
+                {
+                    id: "0002",
+                    url: "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20199/bc504af704ef02fbc0455fdbab8635ee.jpg_750x200_fa9cad2a.jpg"
+                },
+                {
+                    id: "0003",
+                    url: "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20199/bc504af704ef02fbc0455fdbab8635ee.jpg_750x200_fa9cad2a.jpg"
+                }
             ]
         }
     }
 }
 </script>
-<style lang="sass">
-.swiper-pagination-bullet-active
-    background-color: #fff
-</style>>
     
-</style>
 <style lang="sass" scoped>
-// .wrapper >>> .swiper-pagination-bullet-active
-//     background-color: red
+.wrapper
+    /deep/ .swiper-pagination-bullet-active
+        background-color: #fff 
 // 这里穿透为啥不好使？
 .wrapper
     width: 100%
     height: 0
     overflow: hidden
-    padding-bottom: 66.7%
+    padding-bottom: 26.7%
     // 还可以写 height: 31.25vw
     background-color: #eee
 .swiper-img
