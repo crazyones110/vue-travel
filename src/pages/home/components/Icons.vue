@@ -92,7 +92,7 @@ export default {
 <style lang="sass" scoped>
 /deep/ .swiper-pagination
     transform: translateY(30%)
-    transform: scale(50%)
+    transform: scale(0.8)
 .icons
     box-sizing: border-box
     height: 0
