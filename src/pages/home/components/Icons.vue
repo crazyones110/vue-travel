@@ -5,7 +5,7 @@
                 <div class="icon" v-for="img of page" :key="img.id">
                     <div class="icon-wrapper">
                         <img :src="img.src">
-                        <p>{{img.text}}</p>
+                        <p class="icon-desc">{{img.text}}</p>
                     </div>            
                 </div>
             </swiper-slide>
@@ -90,9 +90,10 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+@import styles/mixins.sass
 /deep/ .swiper-pagination
     transform: translateY(30%)
-    transform: scale(50%)
+    transform: scale(0.8)
 .icons
     box-sizing: border-box
     height: 0
@@ -115,4 +116,6 @@ export default {
             justify-content: center
         img
             width: 55%
+            .icon-desc
+                +ellipsis()
 </style>
