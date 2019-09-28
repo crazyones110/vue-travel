@@ -74,6 +74,7 @@ export default {
             +ellipsis()
         .item-button
             +ellipsis()
+            margin-left: .1rem
             line-height: .44rem
             margin-top: .16rem
             color: #fff
