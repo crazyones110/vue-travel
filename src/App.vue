@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <keep-alive>
+      <!-- keep-alive的作用就是 -->
+      <!-- 把router-view中的组件放进内存中，切换取件时从内存中拿即可，不用重新渲染一遍了 -->
+      <router-view/>
+    </keep-alive>
   </div>
 </template>
 
