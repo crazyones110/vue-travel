@@ -16,6 +16,6 @@ fastClick.attach(document.body)
 
 new Vue({
   router,
-  store,
+  store, // 注册在根组件里，Vue会把store派发给每一个子组件
   render: h => h(App)
 }).$mount('#app')
