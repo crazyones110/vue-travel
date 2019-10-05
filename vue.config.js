@@ -7,11 +7,12 @@ module.exports = {
     config.resolve.alias
       .set('@', resolve('src'))
       .set('styles', resolve('src/assets/styles'))
+      .set('common', resolve('src/common'))
   },
   devServer: {
     proxy: {
       '/api': {
-        target: 'http://localhost:8080',
+        target: 'http://localhost:8081',
         changeOrigin: true,
         pathRewrite: {
           '^/api': '/mock'
