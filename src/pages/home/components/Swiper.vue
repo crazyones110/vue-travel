@@ -34,7 +34,6 @@ export default {
 .wrapper
     /deep/ .swiper-pagination-bullet-active
         background-color: #fff 
-// 这里穿透为啥不好使？
 .wrapper
     width: 100%
     height: 0

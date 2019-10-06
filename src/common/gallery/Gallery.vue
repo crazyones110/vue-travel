@@ -7,7 +7,7 @@
                 </swiper-slide>
                 <!-- Optional controls -->
                 <div class="swiper-pagination"  slot="pagination"></div>
-        </swiper>
+            </swiper>
         </div>
     </div>
 </template>
@@ -18,10 +18,12 @@ export default {
     data () {
         return {
             swiperOptions: {
-                pagination: ".swiper-pagination",
-                paginationType: "fraction",
+                pagination: {
+                    el: ".swiper-pagination",
+                    type: "fraction"
+                },
                 observeParents: true, // 监听父元素发生变化的话，DOM 自动刷新一次
-                observer: true // // 监听自己发生变化的话，DOM 自动刷新一次
+                observer: true // 监听自己发生变化的话，DOM 自动刷新一次
             }
         }
     },
@@ -42,9 +44,9 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-/deep/ .swiper-container
-    overflow: inherit
 .container
+    /deep/ .swiper-container
+        overflow: inherit
     display: flex
     flex-direction: column
     justify-content: center
@@ -58,7 +60,7 @@ export default {
     .wrapper
         width: 100%
         height: 0
-        padding-bottom: 100%
+        padding-bottom: 56.22%
         .gallery-img
             width: 100%
         .swiper-pagination
