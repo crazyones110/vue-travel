@@ -11,7 +11,7 @@
             </div>
         </div>
         <common-gallery 
-            :imgs="bannerImgs" 
+            :imgs="bannerImgs"
             v-show="showGallery" 
             @close="handleGalleryClose"
         ></common-gallery>
@@ -42,10 +42,7 @@ export default {
         handleGalleryClose () {
             this.showGallery = false
         }
-    },
-    // activated () {
-    //     console.log(this.sightName, this.bannerImg, this.bannerImgs)
-    // }
+    }
 }
 </script>
 
