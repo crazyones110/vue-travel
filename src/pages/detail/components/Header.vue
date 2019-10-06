@@ -46,7 +46,15 @@ export default {
         }
     },
     activated () {
+        /*
+        这样事件绑定到全局对象上是很危险的，因为不在这个组件里了，依然事件还绑定着
+        少则影响性能，多则出现莫名的 bug
+        所以下面的 deactivated 就是在页面离开的时候进行解绑
+        */
         window.addEventListener("scroll", this.handleScroll)
+    },
+    deactivated () {
+        window.removeEventListener("scroll", this.handleScroll)
     }
 }
 </script>
